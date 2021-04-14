@@ -7,7 +7,8 @@
 //
 
 #import "KLMyCommunityVC.h"
-#import "KLScrollItemView.h"
+//#import "KLScrollItemView.h"
+#import "KLScrollItemView/KLScrollItemView.h"
 #import "defin.h"
 #import <Masonry/Masonry.h>
 @interface KLMyCommunityVC ()<UIScrollViewDelegate>
@@ -33,34 +34,46 @@
     KLScrollItemView *item = [KLScrollItemView new];
     self.barView = item;
     KLScrollItemViewConfig *config = [KLScrollItemViewConfig new];
-    config.canScroll = NO;
-    config.displayBottomLine = YES;
     config.leftMargin = 0;
     config.rightMargin = 0;
-    config.autoSuitItemsPosition = NO;
-    config.autolayoutItemSize = NO;
-    config.itemSize = CGSizeMake(ScreenWidth/4, 45.0);
-    config.titleFont = Font(14);
+
     config.itemNormalColor = Color999;
     config.itemSelectedColor = RGB_X(0xFFFFFF);
-    config.indicatorIDViewColor = RGB_X(0xFF2481);
-    config.bottomLineViewColor = Color333;
+    config.itemNomalTitleFont = Font(16);
+    config.itemSelectedFont = Font(25);
+
+    config.itemNormalColor = Color999;
+    config.itemSelectedColor = RGB_X(0xFFFFFF);
 
     item.config = config;
 
     __weak typeof(self)weak_self = self;
-    [item setTitles:@[@"创客群",@"粉丝群",@"课程群",@"群管理"] selectindex:0 seleledEvent:^(NSInteger selecedIndex) {
+    
+    item.scrollView.scrollEnabled = NO;
+    item.indicatorIDView.backgroundColor = [UIColor redColor];
+    item.bottomLine.hidden = YES;
+    
+    [item setTitles:@[@"创客群",@"粉丝群",@"课程群",@"群管理"].mutableCopy itemSize:^CGSize(NSString * _Nonnull Btntitle) {
+        
+        return CGSizeMake( UIScreen.mainScreen.bounds.size.width/4, 50 - 1.0);
+        
+    } indicatorIDViewChangePositCallBack:^CGSize(UIView * _Nonnull indicatorIDView, NSInteger indexPositionBtn) {
+        
+        return CGSizeMake(20, 1);
+    } selectindex:0 seleledEvent:^(NSInteger selecedIndex, UIButton * _Nonnull oldSelectedBtn, UIButton * _Nonnull selectedBtn) {
+        
         [weak_self.scrollView setContentOffset:CGPointMake(selecedIndex * ScreenWidth, 0) animated:YES] ;
 
     }];
+    item.indicatorIDView.backgroundColor = [UIColor redColor];
 
     [self.view addSubview:item];
     [item mas_makeConstraints:^(MASConstraintMaker *make) {
 
+        make.left.equalTo(@(15));
+        make.right.equalTo(weak_self.view.mas_right);
         make.top.equalTo(@(88));
-        make.height.equalTo(@(45));
-        make.left.equalTo(@(0));
-        make.right.equalTo(@(0));
+        make.height.equalTo(@(52));
     }];
 
     self.scrollView = [UIScrollView new];

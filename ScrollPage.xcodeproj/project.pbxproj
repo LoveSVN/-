@@ -15,7 +15,7 @@
 		A0A53A5F21D222A700687DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A53A5D21D222A700687DA6 /* LaunchScreen.storyboard */; };
 		A0A53A6221D222A700687DA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A53A6121D222A700687DA6 /* main.m */; };
 		A0A53A6A21D225E600687DA6 /* KLMyCommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A53A6921D225E600687DA6 /* KLMyCommunityVC.m */; };
-		A0A53A6D21D2260500687DA6 /* KLScrollItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A53A6B21D2260500687DA6 /* KLScrollItemView.m */; };
+		FE2AACFA2626CB6200C1CDB2 /* KLScrollItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2AACF82626CB6200C1CDB2 /* KLScrollItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +34,9 @@
 		A0A53A6121D222A700687DA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0A53A6821D225E600687DA6 /* KLMyCommunityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLMyCommunityVC.h; sourceTree = "<group>"; };
 		A0A53A6921D225E600687DA6 /* KLMyCommunityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLMyCommunityVC.m; sourceTree = "<group>"; };
-		A0A53A6B21D2260500687DA6 /* KLScrollItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLScrollItemView.m; sourceTree = "<group>"; };
-		A0A53A6C21D2260500687DA6 /* KLScrollItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLScrollItemView.h; sourceTree = "<group>"; };
 		A0A53A6E21D226A900687DA6 /* defin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defin.h; sourceTree = "<group>"; };
+		FE2AACF82626CB6200C1CDB2 /* KLScrollItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLScrollItemView.m; sourceTree = "<group>"; };
+		FE2AACF92626CB6200C1CDB2 /* KLScrollItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLScrollItemView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,7 @@
 		A0A53A5121D222A500687DA6 /* 滚动页面 */ = {
 			isa = PBXGroup;
 			children = (
-				A0A53A6C21D2260500687DA6 /* KLScrollItemView.h */,
-				A0A53A6B21D2260500687DA6 /* KLScrollItemView.m */,
+				FE2AACF72626CB6200C1CDB2 /* KLScrollItemView */,
 				A0A53A6821D225E600687DA6 /* KLMyCommunityVC.h */,
 				A0A53A6921D225E600687DA6 /* KLMyCommunityVC.m */,
 				A0A53A5221D222A500687DA6 /* AppDelegate.h */,
@@ -105,6 +104,15 @@
 				21AC9AA55619255D7CD3A48A /* Pods_ScrollPage.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE2AACF72626CB6200C1CDB2 /* KLScrollItemView */ = {
+			isa = PBXGroup;
+			children = (
+				FE2AACF82626CB6200C1CDB2 /* KLScrollItemView.m */,
+				FE2AACF92626CB6200C1CDB2 /* KLScrollItemView.h */,
+			);
+			path = KLScrollItemView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +229,7 @@
 				A0A53A5721D222A500687DA6 /* ViewController.m in Sources */,
 				A0A53A6221D222A700687DA6 /* main.m in Sources */,
 				A0A53A5421D222A500687DA6 /* AppDelegate.m in Sources */,
-				A0A53A6D21D2260500687DA6 /* KLScrollItemView.m in Sources */,
+				FE2AACFA2626CB6200C1CDB2 /* KLScrollItemView.m in Sources */,
 				A0A53A6A21D225E600687DA6 /* KLMyCommunityVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
